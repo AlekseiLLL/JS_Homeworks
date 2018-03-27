@@ -3,10 +3,6 @@
 var budget = prompt("Ваш бюджет?", "");
 var shopName = prompt("Название вашего магазина?", "");
 
-// Делим бюджет на 30 дней
-
-budget /= 30;
-
 //Объект mainList 
 
 var mainList = {
@@ -27,9 +23,14 @@ for (var i = 0; i < 3; i++) {
 	mainList.shopGoods[i] = prompt("Какой тип товаров будем продавать?", "");
 }
 
-// Вывод в конcоль
+// Делим бюджет на 30 дней
 
-console.log(mainList.budget);
+mainList.budget /= 30;
+
+// Вывод
+
+alert( mainList.budget );
+
 console.log( typeof(mainList.budget));
 
 console.log('Название магазина: ' + mainList.shopName);
