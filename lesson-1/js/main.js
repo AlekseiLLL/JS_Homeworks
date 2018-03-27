@@ -17,20 +17,15 @@ var mainList = {
 	open: true,
 };
 
+
 //Запись в массив shopGoods
 
 for (var i = 0; i < 3; i++) {
 	mainList.shopGoods[i] = prompt("Какой тип товаров будем продавать?", "");
 }
 
-// Делим бюджет на 30 дней
-
-mainList.budget /= 30;
-
 // Вывод
 
-alert( mainList.budget );
+alert( mainList.budget / 30 );
 
-console.log( typeof(mainList.budget));
-
-console.log('Название магазина: ' + mainList.shopName);
+console.log('Бюджет свойство: ' + mainList.budget);
