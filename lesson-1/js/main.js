@@ -23,8 +23,9 @@ for (var i = 0; i < 3; i++) {
 	mainList.shopGoods[i] = prompt("Какой тип товаров будем продавать?", "");
 }
 
-// Вывод в коноль
+// Вывод в конcоль
 
-console.log(mainList.budget = mainList.budget / 30 + " руб. в день.");
+console.log(mainList.budget = mainList.budget / 30);
+console.log( typeof(mainList.budget));
 
 console.log('Название магазина: ' + mainList.shopName);
