@@ -29,7 +29,11 @@ for (let i = 0; i < 5; i++) {
 		console.log('Все верно! ');
 		mainList.shopGoods[i] = a;
 	} else {
+<<<<<<< HEAD
 		i--;
+=======
+	    i--;
+>>>>>>> 65dc8b32a9b2783ec4dd07d5debe7b055910a083
 	}
 }
 
@@ -80,4 +84,8 @@ alert( mainList.budget / 30 );
 
 console.log(mainList);
 
+<<<<<<< HEAD
 //console.log('Название магазина: ' + mainList.shopName);
+=======
+console.log('Название магазина: ' + mainList.shopName);
+>>>>>>> 65dc8b32a9b2783ec4dd07d5debe7b055910a083
