@@ -74,14 +74,9 @@ if (time < 0) {
 			console.log('В сутках только 24 часа!');
 			}
 
-
-// Делим бюджет на 30 дней
-
-mainList.budget /= 30;
-
 // Вывод
 
-alert( mainList.budget );
+alert( mainList.budget / 30 );
 
 console.log(mainList);
 
