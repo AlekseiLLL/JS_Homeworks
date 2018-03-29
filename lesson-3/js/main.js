@@ -7,10 +7,6 @@ let budget,
 	time,
 	price = 1000;
 
-// Объекты
-
-
-
 
 // Функции
 
@@ -68,7 +64,7 @@ function dailyBudget() {
 // Функция дисконтной системы (mainList.discount)
 
 function discountSystem() {
-	if ( mainList.discount === true) {
+	if ( mainList.discount ) {
 		price *= 0.8;
 		alert ('Цена за товар: ' + price);
 	}
