@@ -160,8 +160,7 @@ let mainList = {
 			/*if ( mainList[key] == ["shopName"] || mainList[key] === ["open"] ||
 				mainList[key] === ["shopGoods"] || mainList[key] === ["shopItems"]
 				|| mainList[key] === ["employers"] ) {*/
-				console.log('Свойство ' + key + " со значением " + 
-					mainList[key]);
+				console.log('Свойство: ' + key);
 			/*}*/
 			  
 		}
