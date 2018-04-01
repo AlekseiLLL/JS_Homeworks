@@ -44,6 +44,7 @@ console.log( menuItems );
 // Меняем картинку заднего фона
 
 document.body.style.background = 'url(img/apple_true.jpg) center no-repeat';
+document.body.style.backgroundSize = 'cover';
 
 
 // Меняем заголовок

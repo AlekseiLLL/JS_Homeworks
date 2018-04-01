@@ -11,24 +11,26 @@ let budget,
 
 let openBtn = document.getElementById( 'open-btn' ),
 	// Левое меню
-	name = document.getElementsByClassName( 'name' ),
-	nameValue = document.getElementsByClassName( 'name-value' ),
-	budgetElement = document.getElementsByClassName( 'budget' ),
-	budgetElementValue = document.getElementsByClassName( 'budget-value' ),
-	goods = document.getElementsByClassName( 'goods' ),
-	goodsValue = document.getElementsByClassName( 'goods-value' ),
-	items = document.getElementsByClassName( 'items' ),
-	itemsValue = document.getElementsByClassName('items-value'),
-	employers = document.getElementsByClassName('employers'),
-	employersValue = document.getElementsByClassName('employers-value'),
-	discount = document.getElementsByClassName('discount'),
-	discountValue = document.getElementsByClassName('discount-value'),
-	isOpen = document.getElementsByClassName('isopen'),
-	isOpenValue = document.getElementsByClassName('isopen-value'),
+	name = document.getElementsByClassName( 'name' )[0],
+	nameValue = document.getElementsByClassName( 'name-value' )[0],
+	budgetElement = document.getElementsByClassName( 'budget' )[0],
+	budgetElementValue = document.getElementsByClassName( 'budget-value' )[0],
+	goods = document.getElementsByClassName( 'goods' )[0],
+	goodsValue = document.getElementsByClassName( 'goods-value' )[0],
+	items = document.getElementsByClassName( 'items' )[0],
+	itemsValue = document.getElementsByClassName('items-value')[0],
+	employers = document.getElementsByClassName('employers')[0],
+	employersValue = document.getElementsByClassName('employers-value')[0],
+	discount = document.getElementsByClassName('discount')[0],
+	discountValue = document.getElementsByClassName('discount-value')[0],
+	isOpen = document.getElementsByClassName('isopen')[0],
+	isOpenValue = document.getElementsByClassName('isopen-value')[0],
+
+
 
 	/*leftMenu = document.getElementsByClassName( '.name-value, .budget-value, .goods-value, .items-value, .employers-value, .discount-value, .isopen-value ' ),*/
 	// Товары
-	chooseGoods = document.querySelectorAll( '.goods-item' ),
+	chooseGoods = document.querySelectorAll( '.goods-item' )[0],
 	
 	// Кнопки 
 	/*rightButtons = document.querySelectorAll( '.main-functions button' ),*/
