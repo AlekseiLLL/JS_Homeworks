@@ -10,23 +10,43 @@ let budget,
 // Получаем элементы страницы
 
 let openBtn = document.getElementById( 'open-btn' ),
+	// Левое меню
+	name = document.getElementsByClassName( 'name' ),
+	nameValue = document.getElementsByClassName( 'name-value' ),
+	budgetElement = document.getElementsByClassName( 'budget' ),
+	budgetElementValue = document.getElementsByClassName( 'budget-value' ),
+	goods = document.getElementsByClassName( 'goods' ),
+	goodsValue = document.getElementsByClassName( 'goods-value' ),
+	items = document.getElementsByClassName( 'items' ),
+	itemsValue = document.getElementsByClassName('items-value'),
+	employers = document.getElementsByClassName('employers'),
+	employersValue = document.getElementsByClassName('employers-value'),
+	discount = document.getElementsByClassName('discount'),
+	discountValue = document.getElementsByClassName('discount-value'),
+	isOpen = document.getElementsByClassName('isopen'),
+	isOpenValue = document.getElementsByClassName('isopen-value'),
 
-	leftMenu = document.querySelectorAll( '.name-value, .budget-value, .goods-value, .items-value, .employers-value, .discount-value, .isopen-value ' ),
-
+	/*leftMenu = document.getElementsByClassName( '.name-value, .budget-value, .goods-value, .items-value, .employers-value, .discount-value, .isopen-value ' ),*/
+	// Товары
 	chooseGoods = document.querySelectorAll( '.goods-item' ),
+	
+	// Кнопки 
+	/*rightButtons = document.querySelectorAll( '.main-functions button' ),*/
 
-	rightButtons = document.querySelectorAll( '.main-functions button' ),
+	countBudgetButton = document.getElementsByTagName('button')[1],
+	hireEmployerButton = document.getElementsByTagName('button')[2],
+	discountButton = document.getElementsByTagName('button')[3],
 
-	rightMenu = document.querySelectorAll( '.choose-item, .time-value, .count-budget-value ' ),
+	// Поля
 
+	chooseItem = document.querySelector( '.choose-item' ),
+	timeValue = document.querySelector( '.time-value' ),
+	countBudgetValue = document.querySelector( '.count-budget-value' ),
+
+	/*rightMenu = document.querySelectorAll( '.choose-item, .time-value, .count-budget-value ' ),*/
+
+	// querySelectorAll
 	employersName = document.querySelectorAll( '.main-functions .hire-employers-item' );
-
-console.log(openBtn);
-console.log(leftMenu);
-console.log(chooseGoods);
-console.log(rightButtons);
-console.log(rightMenu);
-console.log(employersName);
 
 
 // Функции
