@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 // Табы
 
 window.addEventListener( 'DOMContentLoaded',  function () {
@@ -13,7 +15,7 @@ window.addEventListener( 'DOMContentLoaded',  function () {
 		}
 	}
 
-	hideTabContent(1)
+	hideTabContent(1);
 
 
 	function showTabContent (b) {
