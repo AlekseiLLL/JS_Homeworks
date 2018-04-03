@@ -44,7 +44,7 @@ let openBtn = document.getElementById( 'open-btn' ),
 // и Названия магазина (shopName) и проверка правильности ввода
 // Обработчики событий
 
-openBtn.addEventListener('click', () => {
+openBtn.addEventListener( 'click', () => {
 	budget = prompt( "Ваш бюджет?", '' );
 	
 	while (isNaN(budget) || budget === "" || budget === null) {
@@ -55,9 +55,23 @@ openBtn.addEventListener('click', () => {
 	nameValue.textContent = prompt( "Название вашего магазина?", '' ).toUpperCase();
 });
 
+// Функция дисконтной системы 
+
+openBtn.addEventListener( 'click', () => {
+	let isDiscount = confirm( 'Вы желаете подключить дисконтную систему?' );
+	if ( isDiscount ) {
+		price *= 0.9;
+		discountValue.textContent = 'Скидка: 10% ';
+		discountValue.style.backgroundColor = 'yellowgreen';
+	} else {
+		discountValue.textContent = '';
+		discountValue.style.backgroundColor = 'red';
+	}
+});
+
 // Функция записи в массив Типа товаров (shopGoods) и проверка правильности ввода
 
-goodsButton.addEventListener('click', () => {
+goodsButton.addEventListener( 'click', () => {
 
 
 	for (let i = 0; i < chooseGoods.length; i++) {
@@ -75,7 +89,7 @@ goodsButton.addEventListener('click', () => {
 
 // Функция выбора товаров
 
-chooseItem.addEventListener('change', () => {
+chooseItem.addEventListener( 'change', () => {
 	let items = chooseItem.value;
 	// Проверка на правильность ввода для items
 	if (isNaN(items) || items !== '' ) {
@@ -92,7 +106,7 @@ chooseItem.addEventListener('change', () => {
 // Функция проверки времени работы магазина (time), время передаем при  
 // вызове функции
 
-timeValue.addEventListener('change', () => {
+timeValue.addEventListener( 'change', () => {
 	let time = timeValue.value;
 	if (time < 0) {
 		console.log('Такого просто не может быть!');
@@ -108,7 +122,7 @@ timeValue.addEventListener('change', () => {
 					mainList.open = false;
 				}
 
-	if ( mainList.open === true ) {
+	if ( mainList.open ) {
 		isOpenValue.style.backgroundColor = 'yellowgreen';
 	} else {
 		isOpenValue.style.backgroundColor = 'red';
@@ -117,13 +131,13 @@ timeValue.addEventListener('change', () => {
 
 // Функция расчета дневного бюджета (mainList.budget)
 
-countBudgetButton.addEventListener('click', () => {
+countBudgetButton.addEventListener( 'click', () => {
 	countBudgetValue.value = budget / 30;
 });
 
 // Функция найма сотрудников
 
-hireEmployerButton.addEventListener('click', () => {
+hireEmployerButton.addEventListener( 'click', () => {
 	for (let i = 0; i < employersName.length; i++) {
 
 		let employeeName = employersName[i].value;
@@ -141,7 +155,6 @@ hireEmployerButton.addEventListener('click', () => {
 let mainList = {
 
 	// Свойства объекта
-
 	budget: budget,
 	shopName: shopName,
 	open: false,
@@ -150,26 +163,14 @@ let mainList = {
 	shopItems: [],
 	employers: {
 		1: "Имя" 
-	},
-
-	// Методы объекта
-
-	// Функция дисконтной системы (mainList.discount)
-
-	discountSystem: function discountSystem() {
-		if ( mainList.discount ) {
-			price *= 0.8;
-			alert ( 'Цена за товар: ' + price );
-		}
-	},
-
+	}
 };
 
 // Вывод
 
 //mainList.chooseShopItems();
 
-console.log(mainList);
+console.log( mainList );
 
 //mainList.youCanBuy();
 
