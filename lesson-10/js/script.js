@@ -129,38 +129,4 @@ window.addEventListener( 'DOMContentLoaded',  function () {
 
 	console.log(moreBtns);
 
-
-	// Создаем класс свойства
-
-	class Options {
-		// Передаем параметры в функцию-конструктор 
-		constructor( height, width, bg, fontSize, textAlign ) {
-			// this - для нового объекта
-			this.height = height;
-			this.width = width;
-			this.bg = bg;
-			this.fontSize = fontSize;
-			this.textAlign = textAlign;
-		}
-		// Метод для создания нового div на странице
-		newDiv( text, style ) {
-			// Создаем новый div
-			let div = document.createElement( 'div' );
-			// Присваиваем ему текст с 1го аргумента 
-			div.textContent = text;
-			// Присваиваем ему стили с 2го аргумента
-			div.style.cssText = style;
-
-			// Возвращаем этот div
-			return div;
-		}
-	}
-
-	// Создаем новый объект через класс
-	const block = new Options(200, 200, "red", 18, "center");
-	// Вызваем его метод и получаем элемент на странице
-	document.body.insertBefore(block.newDiv("Hello world!!!", "color: white;" +
-	"border-radius: 5px; height: 30px; width: 150px; background: darkcyan; " + 
-	"margin: 30px; padding: 30px 0; text-align: center;"), document.body.children[0]);
-
 });
