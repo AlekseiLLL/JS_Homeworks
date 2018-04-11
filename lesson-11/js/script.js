@@ -2,11 +2,11 @@
 
 // Табы
 
-window.addEventListener( 'DOMContentLoaded',  function () {
+window.addEventListener( 'DOMContentLoaded',  function() {
 
 	let tab = document.getElementsByClassName('info-header-tab'),
-	tabContent = document.getElementsByClassName('info-tabcontent'),
-	info = document.getElementsByClassName('info-header')[0];
+		tabContent = document.getElementsByClassName('info-tabcontent'),
+		info = document.getElementsByClassName('info-header')[0];
 
 	function hideTabContent (a) {
 		for ( let i = a; i < tabContent.length; i++ ) {
@@ -143,7 +143,8 @@ window.addEventListener( 'DOMContentLoaded',  function () {
 	let more = document.querySelector('.more'),
 		moreBtns = document.querySelectorAll('.description-btn'),
 		overlay = document.querySelector('.overlay'),
-		close = document.querySelector('.popup-close');
+		close = document.querySelector('.popup-close'),
+		statusMessage = document.createElement('div');
 
 	more.addEventListener('click', function() {
 		this.classList.add('bounceInLeft');
@@ -175,6 +176,7 @@ window.addEventListener( 'DOMContentLoaded',  function () {
 		overlay.style.display = 'none';
 		more.classList.remove('bounceInLeft');
 		document.body.style.overflow = '';
+		statusMessage.innerHTML = '';
 	});
 
 	// Form
@@ -188,8 +190,8 @@ window.addEventListener( 'DOMContentLoaded',  function () {
 		form = modalWindow.getElementsByTagName('form')[0],
 		input = form.getElementsByTagName('input'),
 		contactForm = document.getElementById('form'),
-		inputContactForm = contactForm.getElementsByTagName('input'),
-		statusMessage = document.createElement('div');
+		inputContactForm = contactForm.getElementsByTagName('input');
+		
 	
 	statusMessage.classList.add( 'status' );
 
@@ -238,7 +240,7 @@ window.addEventListener( 'DOMContentLoaded',  function () {
 		let request = new XMLHttpRequest();
 		request.open("POST", 'server.php');
 
-		request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		request.setRequestHeader( "Content-Type", "application/x-www-form-urlencoded" );
 
 		let formData = new FormData(form);
 
@@ -262,5 +264,4 @@ window.addEventListener( 'DOMContentLoaded',  function () {
 		}
 	});
 
-  
 });
