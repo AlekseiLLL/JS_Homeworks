@@ -3,9 +3,15 @@
 // Табы
 
 window.addEventListener( 'DOMContentLoaded',  function () {
-		let tab = document.getElementsByClassName('info-header-tab'),
-	tabContent = document.getElementsByClassName('info-tabcontent'),
-	info = document.getElementsByClassName('info-header')[0];
+	let tab = document.getElementsByClassName('info-header-tab'),
+		tabContent = document.getElementsByClassName('info-tabcontent'),
+		info = document.getElementsByClassName('info-header')[0],
+		inputs = document.querySelectorAll('.counter input');
+
+	for ( let i = 0; i < inputs.length; i++ ) {
+		inputs[i].value = '';
+		// Очищаем поля ввода каклькулятора
+	}
 
 	function hideTabContent (a) {
 		for ( let i = a; i < tabContent.length; i++ ) {
@@ -323,20 +329,24 @@ window.addEventListener( 'DOMContentLoaded',  function () {
 
 	// Калькулятор
 
-	let 
-		peopleField = document.getElementsByClassName( 'counter-block-input' )[0],
+	let peopleField = document.getElementsByClassName( 'counter-block-input' )[0],
 		dayField = document.getElementsByClassName( 'counter-block-input' )[1],
 		base =  document.getElementById( 'select' ),
-		total = document.getElementById( 'total' );
+		total = document.getElementById( 'total' ),
+		counterTotal = document.querySelector( '.counter-total' );
+		
 		total.innerHTML = 0;
 
 	function calculateTotal ( persons, days, base ) {
 		if ( base == 1 ) {
 			total.innerHTML =  parseInt((( peopleField.value * dayField.value ) * 1 ) * 3000 );
+			total.classList.toggle('bounceInRight');
 		} else if ( base == 1.5 ) {
 			total.innerHTML = parseInt((( peopleField.value * dayField.value ) * 1.5 ) * 3000 );
+			total.classList.toggle('bounceInRight');
 		} else if ( base == 1.8 ) {
 			total.innerHTML = parseInt((( peopleField.value * dayField.value ) * 1.8 ) * 3000 );
+			total.classList.toggle('bounceInRight');
 		}
 	}
 
