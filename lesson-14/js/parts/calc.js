@@ -8,7 +8,7 @@ function calc () {
 		// Минимальное колличество людей
 		minPeopleAmount = 1,
 		// Минимальное колличество дней
-		minDaysAmount = 2,
+		minDaysAmount = 1,
 		// Максимальное колличество людей
 		maxPeopleAmount = 100,
 		// Максимальное колличество дней
