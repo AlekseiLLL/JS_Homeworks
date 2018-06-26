@@ -49,7 +49,14 @@ window.addEventListener( 'DOMContentLoaded',  function () {
 		minutes = Math.floor (( t / 1000 / 60) % 60 ),
 		hours = Math.floor (( t / ( 1000 * 60 * 60 )));
 
-
+		if ( t < 0 ) {
+			return {
+				'total' : 0,
+				'hours' : '00',
+				'minutes' : '00',
+				'seconds' : '00'
+			}
+		}
 		return {
 			'total' : t,
 			'hours' : hours,

@@ -7,7 +7,7 @@ let age = document.getElementById('age'),
 	user = {
 	surname: "Пупкин",
 	name: "Вася",
-	// Получаем значение value с элеменьа
+	// Получаем значение value с элемента
 	value: age.value, 
 	show: function() {
 		console.log(this === user);

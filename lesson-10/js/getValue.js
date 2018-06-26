@@ -27,7 +27,7 @@ console.log(user.show());
 
 // Создаем класс свойства
 
-class options {
+class Options {
 	// Передаем параметры в функцию-конструктор 
 	constructor( height, width, bg, fontSize, textAlign ) {
 		// this - для нового объекта
@@ -52,7 +52,7 @@ class options {
 }
 
 // Создаем новый объект через класс
-const block = new options(200, 200, "red", 18, "center");
+const block = new Options(200, 200, "red", 18, "center");
 // Вызваем его метод и получаем элемент на странице
 document.body.insertBefore(block.newDiv("Hello world!!!", "color: white;" +
 "border-radius: 5px; height: 30px; width: 150px; background: darkcyan; " + 

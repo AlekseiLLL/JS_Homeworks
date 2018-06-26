@@ -22,7 +22,7 @@ let menuItems = document.getElementsByClassName('menu-item'),
 
 menuItems[1].parentNode.insertBefore( menuItems[2].parentNode.removeChild( menuItems[2] ), menuItems[1] );
 
-// Добавление класса этого пунка
+// Добавление класса этого пункта
 
 newItem.classList.add( "menu-item" );
 

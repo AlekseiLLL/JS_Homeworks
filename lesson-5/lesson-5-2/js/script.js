@@ -30,7 +30,7 @@ let openBtn = document.getElementById( 'open-btn' ),
 
 	/*leftMenu = document.getElementsByClassName( '.name-value, .budget-value, .goods-value, .items-value, .employers-value, .discount-value, .isopen-value ' ),*/
 	// Товары
-	chooseGoods = document.querySelectorAll( '.goods-item' ),
+	chooseGoods = document.getElementsByClassName( '.goods-item' ),
 	
 	// Кнопки 
 	/*rightButtons = document.querySelectorAll( '.main-functions button' ),*/

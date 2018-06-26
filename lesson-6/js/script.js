@@ -26,6 +26,7 @@ let openBtn = document.getElementById( 'open-btn' ),
 	isOpenValue = document.getElementsByClassName('isopen-value')[0],
 	// Товары
 	chooseGoods = document.querySelectorAll( '.goods-item' ),
+
 	// Кнопки 
 	goodsButton = document.getElementsByTagName('button')[1],
 	countBudgetButton = document.getElementsByTagName('button')[2],
