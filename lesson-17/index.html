@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 17</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="libs/bootstrap/bootstrap-grid-3.3.1.min.css">
+    <link rel="stylesheet" href="libs/font-awesome-4.2.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:500" rel="stylesheet">
+</head>
+<body>
+
+    <div class="progress-top"></div>
+    <div class="progress-right"></div>
+    <div class="progress-bottom"></div>
+    <div class="progress-left"></div>
+
+    <header class="top_header">
+        <div class="header_topline">
+            <div class="container">
+                <div class="col-md-12">
+                    <div class="row">
+                        <button class="auth_buttons hidden-sm hidden-md hidden-lg "><i class="fa fa-user" aria-hidden="true"></i></button>
+                        <div class="top_links">
+                            <a href="#">Главная</a>
+                            <a href="#">Портфолио</a>
+                            <a href="#">О нас</a>
+                            <a href="#">Контакты</a>
+                        </div>
+                        <div class="soc_buttons">
+                            <a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="main_section">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="tabs">
+
+                        <ul class="tabs__caption">
+                            <li class="active">1-я вкладка</li>
+                            <li>2-я вкладка</li>
+                            <li>3-я вкладка</li>
+                        </ul>
+
+                        <div class="tabs__content active">
+                            <div class="galleria">
+                                <img src="img/photo-1.jpg">
+                                <img src="img/photo-2.jpg">
+                                <img src="img/photo-3.jpg">
+                            </div>
+                        </div>
+
+                        <div class="tabs__content">
+                            <div class="search-holder">
+                                <div class="circle"></div>
+                                <div class="form">
+                                    <div class="search-button"></div>
+                                    <input type="text" class="search-input" placeholder="Type here to search ..." />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tabs__content">
+                            <div id="calculator">
+                                <div class="top">
+                                    <span class="clear">C</span>
+                                    <div class="screen"></div>
+                                </div>
+
+                                <div class="keys">
+                                    <span>7</span>
+                                    <span>8</span>
+                                    <span>9</span>
+                                    <span class="operator">+</span>
+                                    <span>4</span>
+                                    <span>5</span>
+                                    <span>6</span>
+                                    <span class="operator">-</span>
+                                    <span>1</span>
+                                    <span>2</span>
+                                    <span>3</span>
+                                    <span class="operator">÷</span>
+                                    <span>0</span>
+                                    <span>.</span>
+                                    <span class="eval">=</span>
+                                    <span class="operator">x</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="header_topline">
+            <div class="container">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="author">© 2018 GloAcademy Homework</div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="soc_buttons">
+                                <a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="libs/galleria/galleria-1.5.7.min.js"></script>
+    <script>
+        (function () {
+            Galleria.loadTheme('libs/galleria/themes/classic/galleria.classic.min.js');
+            Galleria.configure({
+                transition: 'slide',
+                lightbox: true,
+                imageCrop: true,
+                height: 700,
+                width: 1100,
+                easing: 'galleriaOut',
+                preload: 2
+            });
+            Galleria.run('.galleria', {
+                autoplay: 5000
+            });
+        }());
+    </script>
+    <script>
+        (function($) {
+            $(function() {
+
+                $('ul.tabs__caption').on('click', 'li:not(.active)', function() {
+                    $(this)
+                        .addClass('active').siblings().removeClass('active')
+                        .closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+                });
+
+            });
+        })(jQuery);
+    </script>
+    <script>
+        // Progress Scroll
+        const ProgressScroll = (() => {
+            let s;
+
+            return {
+                settings() {
+                    return {
+                        top: $('.progress-top'),
+                        right: $('.progress-right'),
+                        bottom: $('.progress-bottom'),
+                        left: $('.progress-left'),
+                        windowHeight: $(window).height(),
+                        windowWidth: $(window).width(),
+                        scrollHeight: $(document).height() - $(window).height(),
+                        progressTotal: $(window).height() * 2 + $(window).width() * 2,
+                        scrollPosition: $(document).scrollTop()
+                    };
+                },
+
+                init() {
+                    s = this.settings();
+                    this.bindEvents();
+                },
+
+                bindEvents() {
+                    $(window).on('scroll', this.onScroll);
+                    $(window).on('resize', this.onResize);
+
+                    this.progress();
+                },
+
+                onScroll() {
+                    s.scrollPosition = $(document).scrollTop();
+
+                    ProgressScroll.requestTick();
+                },
+
+                onResize() {
+                    s.windowHeight = $(window).height();
+                    s.windowWidth = $(window).width();
+                    s.scrollHeight = $(document).height() - s.windowHeight;
+                    s.progressTotal = s.windowHeight * 2 + s.windowWidth * 2;
+
+                    ProgressScroll.requestTick();
+                },
+
+                requestTick() {
+                    requestAnimationFrame(this.progress);
+                },
+
+                progress() {
+                    const percentage = s.scrollPosition / s.scrollHeight;
+                    const width = s.windowWidth / s.progressTotal;
+                    const height = s.windowHeight / s.progressTotal;
+
+                    s.top.css('width', `${(percentage / width) * 100}%`);
+                    s.right.css('height', `${((percentage - width) / height) * 100}%`);
+                    s.bottom.css('width', `${((percentage - width - height) / width) * 100}%`);
+                    s.left.css('height', `${((percentage - width - height - width) / height) * 100}%`);
+                }
+            };
+        })();
+
+        // Init
+        $(() => {
+            ProgressScroll.init();
+        });
+    </script>
+    <script>
+        (function () {
+            $(document).on('click', '.search-button', function () {
+                $(this).parent().parent().toggleClass('active');
+            });
+        })();
+    </script>
+    <script>
+        var keys = document.querySelectorAll('#calculator span');
+        var operators = ['+', '-', 'x', '÷'];
+        var decimalAdded = false;
+
+
+        for(var i = 0; i < keys.length; i++) {
+            keys[i].onclick = function(e) {
+
+                var input = document.querySelector('.screen');
+                var inputVal = input.innerHTML;
+                var btnVal = this.innerHTML;
+                var total;
+                if(btnVal == 'C') {
+                    input.innerHTML = '';
+                    decimalAdded = false;
+                }
+
+                else if(btnVal == '=') {
+                    var equation = inputVal;
+                    var lastChar = equation[equation.length - 1];
+
+                    equation = equation.replace(/x/g, '*').replace(/÷/g, '/');
+
+                    if(operators.indexOf(lastChar) > -1 || lastChar == '.')
+                        equation = equation.replace(/.$/, '');
+
+                    if(equation)
+                    {
+                        total = eval(equation);
+                        if(total.toString().indexOf('.') != -1)
+                            total= total.toFixed(2);
+
+                        input.innerHTML = total;
+                    }
+
+                    decimalAdded = false;
+                }
+
+
+                else if(operators.indexOf(btnVal) > -1) {
+
+                    var lastChar = inputVal[inputVal.length - 1];
+
+                    if(inputVal != '' && operators.indexOf(lastChar) == -1)
+                        input.innerHTML += btnVal;
+
+                    else if(inputVal == '' && btnVal == '-')
+                        input.innerHTML += btnVal;
+
+                    if(operators.indexOf(lastChar) > -1 && inputVal.length > 1) {
+                        input.innerHTML = inputVal.replace(/.$/, btnVal);
+                    }
+
+                    decimalAdded =false;
+                }
+
+                else if(btnVal == '.') {
+                    if(!decimalAdded) {
+                        input.innerHTML += btnVal;
+                        decimalAdded = true;
+                    }
+                }
+
+                else {
+                    input.innerHTML += btnVal;
+                }
+
+                e.preventDefault();
+            }
+        }
+    </script>
+</body>
+</html>
